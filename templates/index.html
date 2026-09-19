@@ -4,16 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spider - Man</title>
-    <h1>Spider - Man</h1>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <header>
+        <img src="{{ url_for('static', filename='img/Spiderlogo.png') }}" alt="Logo do Spider-Man">
+        <h1>Spider - Man</h1>
+    </header>
     <nav>
         <ul>
-            <li><a href="/index.html">inicio</a></li>
-            <li><a href="/Contatos.html">Sobre E contato</a></li>
-            <li><a href="/Wiki.html">Wiki Spider-Man</a></li>
+            <li><a href="{{ url_for('home') }}">Início</a></li>
+            <li><a href="{{ url_for('contatos') }}">Sobre e contato</a></li>
+            <li><a href="{{ url_for('wiki') }}">Wiki Spider-Man</a></li>
         </ul>
     </nav>
+    <main>
+        <section class="animation-showcase" aria-label="Animação de linhas">
+            <h2 class="animated-title" aria-label="Spider - Man">
+                <span class="animation-letter">S</span><span class="animation-letter">P</span><span class="animation-letter">I</span><span class="animation-letter">D</span><span class="animation-letter">E</span><span class="animation-letter">R</span><span class="animation-space"> - </span><span class="animation-letter">M</span><span class="animation-letter">A</span><span class="animation-letter">N</span>
+            </h2>
+        </section>
+        <h2>Welcome to the Spider-Man Wiki</h2>
+        <p>Here you can find information about Spider-Man, his allies, and his enemies.</p>
+    </main>
+    <script type="module">
+        import { animate, stagger } from 'https://cdn.jsdelivr.net/npm/animejs@4.2.2/+esm';
 
+        animate('.animation-letter', {
+            opacity: [0, 1],
+            translateY: ['1rem', '0rem'],
+            scale: [0.8, 1],
+            ease: 'outExpo',
+            duration: 700,
+            delay: stagger(100),
+            loopDelay: 1800,
+            loop: true
+        });
+    </script>
 </body>
 </html>
