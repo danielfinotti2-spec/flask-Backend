@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, redirect, render_template, url_for
 
 # Criação do objeto Flask e iniciando a aplicação
 app = Flask(__name__)
@@ -10,16 +10,21 @@ def home():
     return render_template("index.html")
 
 
+@app.route("/sobre.html")
+def sobre():
+    return render_template("sobre.html")
+
+
 # Página Wiki
 @app.route("/Wiki.html")
 def wiki():
-    return render_template("Wiki.html")
+    return redirect(url_for("sobre"))
 
 
 # Página Contatos
 @app.route("/Contatos.html")
 def contatos():
-    return render_template("Contatos.html")
+    return redirect(f"{url_for('home')}#contato")
 
 
 # Página index.html

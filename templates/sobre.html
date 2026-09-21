@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - Daniel Finotti</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="wrap">
+        <header class="topo-sobre">
+            <a href="{{ url_for('home') }}" class="avatar-link" aria-label="Página inicial">
+                <img class="avatar" src="{{ url_for('static', filename='assets/logo.png') }}" alt="Foto de perfil do Daniel Finotti">
+            </a>
+
+            <h1 class="Nome-Principal">Daniel Finotti</h1>
+
+            <div class="sobre-status">
+                <p id="Dev">
+                    <i class="fa-brands fa-github"></i>
+                    Desenvolvedor Júnior
+                </p>
+
+                <h3 class="tech-icons" aria-label="Tecnologias">
+                    <i class="fa-brands fa-html5" title="HTML"></i>
+                    <i class="fa-brands fa-css" title="CSS"></i>
+                    <i class="fa-brands fa-square-js" title="JavaScript"></i>
+                    <i class="fa-brands fa-python" title="Python"></i>
+                </h3>
+            </div>
+        </header>
+
+        <section class="sobre-bloco" id="sobre">
+            <p class="section-label"><i class="fa-solid fa-circle-info"></i> SOBRE</p>
+            <h2>Quem é Daniel Finotti?</h2>
+
+            <div class="sobre-texto">
+                <p>Sou Daniel Finotti, tenho 17 anos, moro em Santíssimo, Rio de Janeiro, e atualmente estudo e me dedico à área de tecnologia e desenvolvimento.</p>
+
+                <p>Meu principal foco é Python, linguagem que utilizo para praticar lógica de programação, criar sistemas, automações, pequenos programas e desenvolver projetos próprios. Também estudo HTML, CSS e JavaScript, principalmente para criação de sites, interfaces e páginas responsivas para computador e celular.</p>
+
+                <p>Além disso, venho aprendendo a utilizar Git e GitHub para organizar meus projetos, acompanhar alterações no código e publicar o que estou desenvolvendo. Grande parte do meu aprendizado acontece na prática, criando projetos, testando ideias, corrigindo erros e buscando melhorar cada vez mais.</p>
+
+                <p>Tenho interesse tanto em front-end quanto em back-end. No front-end, gosto de trabalhar com estrutura, design, responsividade e interação das páginas. No back-end, meu foco principal atualmente é Python, lógica de sistemas e desenvolvimento de funcionalidades.</p>
+
+                <p>Estou no início da minha trajetória como desenvolvedor e busco evoluir constantemente, aprender novas linguagens e tecnologias e adquirir experiência através de projetos reais.</p>
+
+                <p>Este site foi criado para apresentar um pouco sobre mim, mostrar minha evolução na programação e reunir alguns dos projetos que estou desenvolvendo.</p>
+            </div>
+        </section>
+
+        <nav class="sobre-links" aria-label="Links da página sobre">
+            <a href="{{ url_for('home') }}"><i class="fa-solid fa-house"></i> Início</a>
+            <a href="https://github.com/danielfinotti2-spec" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://www.instagram.com/euodeene/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <a href="https://wa.me/5521994856055?text=Olá%2C%20tenho%20interesse%20em%20criar%20um%20site.%20Gostaria%20de%20solicitar%20um%20orçamento%20e%20entender%20melhor%20os%20valores%20e%20opções%20disponíveis." target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        </nav>
+
+    </div>
+</body>
+</html>

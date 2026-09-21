@@ -1,45 +1,116 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spider - Man</title>
+    <meta name="theme-color" content="#080808">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Daniel Finotti</title>
 </head>
-<body>
-    <header>
-        <img src="{{ url_for('static', filename='img/Spiderlogo.png') }}" alt="Logo do Spider-Man">
-        <h1>Spider - Man</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="{{ url_for('home') }}">Início</a></li>
-            <li><a href="{{ url_for('contatos') }}">Sobre e contato</a></li>
-            <li><a href="{{ url_for('wiki') }}">Wiki Spider-Man</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section class="animation-showcase" aria-label="Animação de linhas">
-            <h2 class="animated-title" aria-label="Spider - Man">
-                <span class="animation-letter">S</span><span class="animation-letter">P</span><span class="animation-letter">I</span><span class="animation-letter">D</span><span class="animation-letter">E</span><span class="animation-letter">R</span><span class="animation-space"> - </span><span class="animation-letter">M</span><span class="animation-letter">A</span><span class="animation-letter">N</span>
-            </h2>
-        </section>
-        <h2>Welcome to the Spider-Man Wiki</h2>
-        <p>Here you can find information about Spider-Man, his allies, and his enemies.</p>
-    </main>
-    <script type="module">
-        import { animate, stagger } from 'https://cdn.jsdelivr.net/npm/animejs@4.2.2/+esm';
+<body id="top">
+    <div id="wrap">
+        <header>
+            <div class="logotitle">
+                <a href="{{ url_for('home') }}" class="avatar-link" aria-label="Página inicial">
+                    <img class="avatar" src="{{ url_for('static', filename='assets/logo.png') }}" alt="Foto de perfil do Daniel Finotti">
+                </a>
+                <div>
+                    <span class="eyebrow">Perfil pessoal</span>
+                    <h1>Daniel Finotti</h1>
+                    <p class="subtitle"><i class="fa-brands fa-python"></i> • <i class="fa-brands fa-js"></i> • <i class="fa-brands fa-html5"></i> • <i class="fa-brands fa-css"></i> </p>
+                </div>
+            </div>
 
-        animate('.animation-letter', {
-            opacity: [0, 1],
-            translateY: ['1rem', '0rem'],
-            scale: [0.8, 1],
-            ease: 'outExpo',
-            duration: 700,
-            delay: stagger(100),
-            loopDelay: 1800,
-            loop: true
-        });
-    </script>
+            <form class="header-search" action="https://www.google.com/search" target="_blank" method="get">
+                <input type="search" name="q" placeholder="Pesquisar no Google..." aria-label="Pesquisar no Google">
+                <button type="submit" aria-label="Pesquisar"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </header>
+
+        <nav>
+            <a class="active" href="{{ url_for('home') }}"><i class="fa-solid fa-house"></i> Início</a>
+            <a href="{{ url_for('sobre') }}"><i class="fa-solid fa-user"></i> Sobre</a>
+            <a href="#projetos"><i class="fa-solid fa-code"></i> Projetos</a>
+            <a href="#contato"><i class="fa-solid fa-paper-plane"></i> Contato</a>
+        </nav>
+
+        <main>
+            <section>
+                <div class="hero hero-image">
+                    <img src="{{ url_for('static', filename='assets/ChatGPT Image 27 de ago. de 2026, 03_19_40.png') }}" alt="Imagem com a palavra Focus">
+                </div>
+
+                <div class="content-block" id="projetos">
+                    <p class="section-label">PROJETOS</p>
+                    <h2>O que estou criando</h2>
+                    <div class="cards">
+                        <article class="card projeto-card">
+                            <i class="fa-solid fa-code"></i>
+                            <h3>Programação</h3>
+                            <a class="gif-frame" href="{{ url_for('static', filename='assets/programaçao.gif.gif') }}" aria-label="Abrir GIF de programação">
+                                <img src="{{ url_for('static', filename='assets/programaçao.gif.gif') }}" alt="GIF de programação">
+                            </a>
+                            <p>Projetos e testes com HTML, CSS, JavaScript e Python.</p>
+                        </article>
+
+                        <article class="card projeto-card">
+                            <i class="fa-solid fa-gamepad"></i>
+                            <h3>Jogos</h3>
+                            <a class="gif-frame" href="{{ url_for('static', filename='assets/jogo.gif') }}" aria-label="Abrir GIF de jogo">
+                                <img src="{{ url_for('static', filename='assets/jogo.gif') }}" alt="GIF de jogo">
+                            </a>
+                            <p>Ideias, sistemas e experiências que estou desenvolvendo.</p>
+                        </article>
+
+                        <article class="card projeto-card">
+                            <i class="fa-solid fa-bolt"></i>
+                            <h3>Experimentos</h3>
+                            <p>Novas ideias, interfaces e coisas que quero aprender.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <aside id="contato">
+                <div class="profile-card">
+                    <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Foto do Daniel Finotti">
+                    <h3>Daniel Finotti</h3>
+                    <p>Meu espaço na web.</p>
+                </div>
+
+                <div class="aside-box">
+                    <h3>Contato</h3>
+                    <div class="contact-links">
+                        <a href="https://www.instagram.com/euodeene/" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-instagram"></i>
+                            Instagram
+                        </a>
+                        <a href="https://github.com/danielfinotti2-spec" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-github"></i>
+                            GitHub
+                        </a>
+                        <a href="mailto:danielfinotti2@gmail.com?subject=Contato pelo site&body=Olá Daniel, vim pelo seu site.">
+                            <i class="fa-solid fa-envelope"></i>
+                            Enviar e-mail
+                        </a>
+                        <a href="https://wa.me/5521994856055?text=Olá%2C%20tenho%20interesse%20em%20criar%20um%20site.%20Gostaria%20de%20solicitar%20um%20orçamento%20e%20entender%20melhor%20os%20valores%20e%20opções%20disponíveis." target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            WhatsApp
+                        </a>
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i>
+                            Rio de Janeiro
+                        </span>
+                    </div>
+                </div>
+            </aside>
+        </main>
+
+        <footer>
+            <a href="{{ url_for('home') }}" aria-label="Início"><i class="fa-solid fa-house"></i></a>
+            <div><i class="fa-solid fa-copyright"></i> 2026 Daniel Finotti</div>
+            <a href="#top" aria-label="Voltar ao topo"><i class="fa-solid fa-circle-up"></i></a>
+        </footer>
+    </div>
 </body>
 </html>
