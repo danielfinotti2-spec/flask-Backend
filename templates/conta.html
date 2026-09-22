@@ -5,10 +5,15 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head><body><div id="wrap">
   <header><div class="logotitle"><a href="{{ url_for('home') }}"><img class="avatar" src="{{ url_for('static', filename='assets/logo.png') }}" alt="Daniel Finotti"></a><div><span class="eyebrow">PERFIL PESSOAL</span><h1>Minha conta</h1><p class="subtitle">Crie uma conta ou entre</p></div></div></header>
-  <nav><a href="{{ url_for('home') }}">Início</a><a href="{{ url_for('sobre') }}">Sobre</a><a href="{{ url_for('fazcontato') }}">Contato</a><a class="active" href="{{ url_for('conta') }}">Conta</a></nav>
+  <nav aria-label="Navegação principal">
+            <a href="{{ url_for('home') }}"><i class="fa-solid fa-house"></i> Início</a>
+            <a href="{{ url_for('sobre') }}"><i class="fa-solid fa-user"></i> Sobre</a>
+            <a href="{{ url_for('home') }}#projetos"><i class="fa-solid fa-code"></i> Projetos</a>
+            <a class="active" aria-current="page" href="{{ url_for('contatos') }}"><i class="fa-solid fa-paper-plane"></i> Contato</a>
+        </nav>
   <main class="sobre-main"><section class="sobre-bloco">
     {% with messages = get_flashed_messages(with_categories=true) %}{% for category, message in messages %}<p class="alert {% if category == 'error' %}alert-danger{% else %}alert-success{% endif %}">{{ message }}</p>{% endfor %}{% endwith %}
-    {% if session.user_name %}<h2>Olá, {{ session.user_name }}</h2>{% if session.is_admin %}<p><a class="btn contact-submit" href="{{ url_for('admin') }}">Abrir administração</a></p>{% endif %}<form action="{{ url_for('sair') }}" method="post"><button class="btn contact-submit">Sair</button></form>
+    {% if session.user_name %}<h2>Olá, {{ session.user_name }}</h2><form action="{{ url_for('sair') }}" method="post"><button class="btn contact-submit">Sair</button></form>
     {% else %}<div class="account-grid">
       <form class="contact-form" method="post"><p class="section-label">CRIAR CONTA</p><h2>Cadastre-se</h2><div class="mb-3"><label class="form-label">Nome</label><input class="form-control" name="name" required></div><div class="mb-3"><label class="form-label">E-mail</label><input class="form-control" name="email" type="email" required></div><div class="mb-3"><label class="form-label">Senha</label><input class="form-control" name="password" type="password" minlength="6" required></div><button class="btn contact-submit">Criar conta</button></form>
       <form class="contact-form" action="{{ url_for('entrar') }}" method="post"><p class="section-label">ENTRAR</p><h2>Acesse sua conta</h2><div class="mb-3"><label class="form-label">E-mail</label><input class="form-control" name="email" type="email" required></div><div class="mb-3"><label class="form-label">Senha</label><input class="form-control" name="password" type="password" required></div><button class="btn contact-submit">Entrar</button></form>

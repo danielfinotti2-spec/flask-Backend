@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ tag_title }} | {{ sitename }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head><body><div id="wrap">
+  <header><div><span class="eyebrow">CONTEÚDO</span><h1>{{ sitename }}</h1></div><a class="btn contact-submit" href="{{ url_for('home') }}">Voltar</a></header>
+  <main class="sobre-main"><article class="sobre-bloco">
+    <p class="section-label">PUBLICADO EM {{ content.c_created_at }}</p>
+    <h2>{{ content.c_title }}</h2>
+    <p class="subtitle">Por {{ content.u_name or 'Autor desconhecido' }}</p>
+    <div class="sobre-texto"><p>{{ content.c_text }}</p></div>
+  </article></main>
+</div></body></html>

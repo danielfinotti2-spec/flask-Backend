@@ -10,13 +10,11 @@
     <div><span class="eyebrow">PERFIL PESSOAL</span><h1>Daniel Finotti</h1><p class="subtitle"><i class="fa-brands fa-python"></i> • <i class="fa-brands fa-js"></i> • <i class="fa-brands fa-html5"></i> • <i class="fa-brands fa-css"></i> </p></div>
   </div></header>
   <nav aria-label="Navegação principal">
-    <a href="{{ url_for('home') }}"><i class="fa-solid fa-house"></i> Início</a>
-    <a href="{{ url_for('sobre') }}"><i class="fa-solid fa-user"></i> Sobre</a>
-    <a href="{{ url_for('home') }}#projetos"><i class="fa-solid fa-code"></i> Projetos</a>
-    <a href="{{ url_for('home') }}#contato"><i class="fa-solid fa-paper-plane"></i> Contato</a>
-    <a href="{{ url_for('conta') }}"><i class="fa-solid fa-user-plus"></i> Conta</a>
-    <a class="active" href="{{ url_for('fazcontato') }}"><i class="fa-solid fa-envelope"></i> Mensagem</a>
-  </nav>
+            <a href="{{ url_for('home') }}"><i class="fa-solid fa-house"></i> Início</a>
+            <a href="{{ url_for('sobre') }}"><i class="fa-solid fa-user"></i> Sobre</a>
+            <a href="{{ url_for('home') }}#projetos"><i class="fa-solid fa-code"></i> Projetos</a>
+            <a class="active" aria-current="page" href="{{ url_for('contatos') }}"><i class="fa-solid fa-paper-plane"></i> Contato</a>
+        </nav>
   <main class="sobre-main"><section class="sobre-bloco contact-form-card">
     <p class="section-label">Mensagem</p><h2>Envie sua mensagem</h2>
     <form class="contact-form" action="{{ url_for('fazcontato') }}" method="post">

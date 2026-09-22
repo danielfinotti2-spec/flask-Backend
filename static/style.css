@@ -49,11 +49,6 @@ aside { position:sticky; top:1rem; padding:1rem; align-self:start; }
 .contact-page-links a { padding:.9rem 1rem; }
 .contact-form { max-width:42rem; }
 .account-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:2rem; }
-.admin-heading { margin-top:2rem; }
-.admin-table { overflow-x:auto; }
-.admin-table table { width:100%; border-collapse:collapse; }
-.admin-table th,.admin-table td { padding:.75rem; text-align:left; border-bottom:1px solid var(--line); }
-.admin-table th { color:var(--accent); }
 .contact-form .form-control { color:var(--text); background:#14181e; border-color:var(--line); }
 .contact-form .form-control:focus { color:var(--text); background:#14181e; border-color:var(--accent); box-shadow:0 0 0 .2rem rgb(216 144 152 / 18%); }
 .contact-form .form-control::placeholder { color:#788291; }
