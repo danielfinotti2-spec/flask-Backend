@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ tag_title }}</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head><body><div id="wrap">
+  <header><div><span class="eyebrow">ADMINISTRAÇÃO</span><h1>Painel de dados</h1><p class="subtitle">Contas e mensagens recebidas</p></div><a class="btn contact-submit" href="{{ url_for('home') }}">Voltar ao site</a></header>
+  <main class="sobre-main"><section class="sobre-bloco">
+    <h2>Contas ({{ users|length }})</h2>
+    <div class="admin-table"><table><thead><tr><th>Nome</th><th>E-mail</th><th>Cadastro</th></tr></thead><tbody>{% for user in users %}<tr><td>{{ user.u_name or 'Sem nome' }}</td><td>{{ user.u_email }}</td><td>{{ user.u_created_at }}</td></tr>{% endfor %}</tbody></table></div>
+    <h2 class="admin-heading">Mensagens ({{ contacts|length }})</h2>
+    <div class="admin-table"><table><thead><tr><th>E-mail</th><th>Mensagem</th><th>Data</th><th>Status</th></tr></thead><tbody>{% for contact in contacts %}<tr><td>{{ contact.email }}</td><td>{{ contact.message }}</td><td>{{ contact.created_at }}</td><td>{{ contact.status }}</td></tr>{% endfor %}</tbody></table></div>
+  </section></main>
+</div></body></html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#101317">
-    <title>Sobre | Daniel Finotti</title>
+    <title>Contato | Daniel Finotti</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body id="top">
@@ -28,22 +28,21 @@
 
         <nav aria-label="Navegação principal">
             <a href="{{ url_for('home') }}"><i class="fa-solid fa-house"></i> Início</a>
-            <a class="active" aria-current="page" href="{{ url_for('sobre') }}"><i class="fa-solid fa-user"></i> Sobre</a>
+            <a href="{{ url_for('sobre') }}"><i class="fa-solid fa-user"></i> Sobre</a>
             <a href="{{ url_for('home') }}#projetos"><i class="fa-solid fa-code"></i> Projetos</a>
-            <a href="{{ url_for('home') }}#contato"><i class="fa-solid fa-paper-plane"></i> Contato</a>
-            <a href="{{ url_for('conta') }}"><i class="fa-solid fa-user-plus"></i> Conta</a>
+            <a class="active" aria-current="page" href="{{ url_for('contatos') }}"><i class="fa-solid fa-paper-plane"></i> Contato</a>
         </nav>
 
         <main class="sobre-main">
-            <section class="sobre-bloco" id="sobre">
-                <p class="section-label">SOBRE</p>
-                <h2>Quem é Daniel Finotti?</h2>
-                <div class="sobre-texto">
-                    <p>Sou Daniel Finotti, tenho 17 anos, moro em Santíssimo, Rio de Janeiro, e estudo tecnologia e desenvolvimento.</p>
-                    <p>Meu principal foco é Python, linguagem que uso para praticar lógica de programação, criar sistemas, automações e projetos próprios. Também estudo HTML, CSS e JavaScript para criar interfaces e páginas responsivas.</p>
-                    <p>Venho aprendendo Git e GitHub para organizar meus projetos, acompanhar alterações e publicar o que desenvolvo. Grande parte do meu aprendizado acontece na prática: criando, testando e melhorando ideias.</p>
-                    <p>Tenho interesse em front-end e back-end. Gosto de trabalhar com design, responsividade, interação e funcionalidades usando Python.</p>
-                    <p>Este site reúne minha evolução na programação e alguns dos projetos que estou desenvolvendo.</p>
+            <section class="sobre-bloco">
+                <p class="section-label">CONTATO</p>
+                <h2>Vamos conversar</h2>
+                <p class="subtitle">Escolha um canal para entrar em contato.</p>
+                <div class="contact-links contact-page-links">
+                    <a href="mailto:danielfinotti2@gmail.com"><i class="fa-solid fa-envelope"></i> danielfinotti2@gmail.com</a>
+                    <a href="https://github.com/danielfinotti2-spec" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <a href="https://www.instagram.com/euodeene/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                    <a href="https://wa.me/5521994856055" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
                 </div>
             </section>
         </main>
